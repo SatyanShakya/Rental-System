@@ -1,0 +1,500 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500&display=swap');
+
+/* :root{
+  primaryColor :#5899E2;
+  --black : #313638;
+  white: #E8E9EB;
+  achhi: #F9A03F
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+     
+ 
+}
+
+nav {
+  flex: 1;
+  text-align: right;
+
+
+}
+
+nav ul {
+  display: inline-block;
+  list-style-type: none;
+
+}
+nav ul li {
+  display: inline-block;
+  margin-right: 20px;
+  transition: background 0.5s;
+  
+  border-radius: 10px;
+  
+}
+nav ul li a:hover {
+  background:#5899E2;
+  color: #E8E9EB;
+  border-radius: 10px;
+  transform: translateY(-2px);
+
+}
+nav ul li a {
+  text-decoration: none;
+  color:#313638;
+  border-right: 2px solid #313638;
+  padding-right: 15px;
+  padding-left: 5px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-family:'Nunito', sans-serif ;
+}
+a {
+  text-decoration: none;
+  color:#313638;
+
+  padding-right: 15px;
+  padding-left: 5px;
+  font-size: 30px;
+  letter-spacing: 2px;
+  font-family:'Nunito', sans-serif ;
+}
+
+
+p {
+  color:#313638;
+}
+
+h1 {
+  color:goldenrod;
+}
+.main {
+  max-height: 1300px;
+  margin:0px;
+  padding-right: 25px;
+  padding-left: 25px;
+}
+.row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.col-2 {
+  flex-basis: 46%;
+  min-width: 300px;
+ 
+}
+.cycledetailform{
+margin: 25px 6;
+padding: inherit;
+
+}
+.cycledetailform .btn_small {
+  display: inline-block;
+  background: whitesmoke;
+  color:#313638;
+  padding: 0px 24px;
+  margin: 20px 23;
+  border-radius: 25px; 
+  border: 2px solid #313638;
+   transition: background 0.5s;
+  font-family:'Nunito', sans-serif ;
+  font-size: 8px;
+  
+}
+.cycledetailform .btn_small:hover {
+  background: #5899E2;
+  color: #E8E9EB;
+}
+.col-2 img {
+  max-width: 75%;
+  padding: 10px 0 ;
+  
+}
+
+.col-2 h1 {
+  font-size: 90px;
+  line-height: 69px;
+  margin: 30px 0;
+ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.col-2 p {
+  font-size: 50px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.btn {
+  display: inline-block;
+  background: #5899E2;
+  color: #E8E9EB;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 45px;
+  border: 2px solid #313638;
+  transition: background 0.5s;
+  font-family:'Nunito', sans-serif ;
+  font-size: 30px;
+}
+.btn:hover {
+  background: goldenrod;
+  color: #E8E9EB;
+
+  transform: translateY(-5px);
+ 
+}
+.btn_small {
+  display: inline-block;
+  background: whitesmoke;
+  color:#313638;
+  padding: 2px 10px;
+  margin: 8px 0;
+  border-radius: 25px; 
+  border: 2px solid #313638;
+   transition: background 0.5s;
+  font-family:'Nunito', sans-serif ;
+  font-size: 8px;
+  
+}
+.btn_small:hover {
+  background: #f4dd2c;
+  color: #E8E9EB;
+}
+
+.header {
+  font-family: papyrus;
+}
+.header .row {
+  margin-top: 50px;
+}
+.categories {
+  margin: 70px 0;
+}
+.col-3 {
+  flex: 30%;
+  min-width: 250px;
+  margin-bottom: 30px;
+}
+.col-3 img {
+  width: 250px;
+}
+.small-container {
+  max-width: 1080px;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+h2.title {
+  color: goldenrod;
+  font-size: 40px;
+}
+
+.col-4 {
+  flex-basis: 25%;
+  padding: 10px;
+  min-width: 250px;
+  margin-bottom: 30px;
+  transition: transform 0.5s;
+  
+}
+.col-4 img {
+  width: 100%;  
+  vertical-align: middle;
+}
+/* .col-4 button{
+  background-color: gold; 
+  color: blue;
+  border: none;
+  border-radius: 15px;
+
+}
+.col-4 button:hover {
+  transform: translateY(-5px);
+} */
+.col-4 p {
+  font-family:'Nunito', sans-serif ;
+}
+.col-4 h4 {
+  font-family:'Nunito', sans-serif ;
+}
+.title {
+  text-align: center;
+  margin: auto;
+  position: relative;
+  line-height: 60px;
+  font-style: italic;
+}
+.title::after {
+  content: "";
+  background: rebeccapurple;
+  width: 80px;
+  height: 5px;
+  border-radius: 5px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+h4 {
+  color: black;
+  font-family: cursive;
+}
+
+.col-2 p {
+  font-style: italic;
+}
+.para {
+  color: black;
+}
+.offer {
+  background: radial-gradient(white, #DCDCDC);
+  margin-top: 80px;
+  padding: 30px 0;
+}
+.offer-img:hover {
+  transform: translatey(-5px);
+}
+.brands {
+  margin: 100px auto;
+}
+.col-5 {
+  width: 160px;
+}
+.col-5 img {
+  width: 100%;
+  cursor: pointer;
+  filter: grayscale(100%);
+}
+
+.footer {
+  background:black;
+  color:#E8E9EB;
+  font-size: 14px;
+  padding: 60px 0 20px;
+  border-top-left-radius: 85px ;
+  border-top-right-radius: 85px ;
+
+}
+.foot {
+  color: #E8E9EB;
+}
+.footer h3 {
+  color: #E8E9EB;
+  margin-bottom: 20px;
+}
+.footer p {
+  color: #E8E9EB;
+ 
+}
+.footer-col-1,
+.footer-col-2,
+.footer-col-3 {
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+.footer-col-1 {
+  flex-basis: 30%;
+}
+.footer-col-2 {
+  flex: 1;
+  text-align: center;
+}
+.footer-col-2 {
+  width: 180px;
+  margin-bottom: 20px;
+}
+.footer-col-3 {
+  flex-basis: 12%;
+  text-align: center;
+}
+ul {
+  list-style-type: none;
+}
+
+/*----- all products page -----*/
+
+.row-2 {
+  justify-content: space-between;
+  margin: 100px auto 50px;
+}
+select {
+  border: 1px solid goldenrod;
+  padding: 5px;
+}
+select:focus {
+  outline: none;
+}
+.page-btn {
+  margin: 0 auto 80px;
+}
+.page-btn span {
+  display: inline-block;
+  border: 1px solid goldenrod;
+  margin-left: 10px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px; 
+  cursor: pointer;
+}
+.page-btn span:hover {
+  background: goldenrod;
+  color: #fff;
+}
+
+/*-------single product details------*/
+
+.single-product {
+  margin-top: 80px;
+}
+.single-product .col-2 img {
+  padding: 0;
+}
+.single-product .col-2 {
+  padding: 20px;
+  width: 200px;
+}
+.single-product h4 {
+  margin: 20px 0;
+  font-size: 22px;
+  font-weight: bold;
+}
+.single-product select {
+  display: block;
+  padding: 10px;
+  margin-top: 10px;
+}
+.single-product input {
+  width: 162px;
+  height: 25px;
+  padding-left: 16px;
+  font-size: 16px;
+  margin-right: 10px;
+  border: 1px solid goldenrod;
+}
+
+form {
+width: 200px;
+padding: auto;
+}
+.single-product label{
+  width: 200px;
+
+}
+input:focus {
+  outline: none;
+}
+.small-img-row {
+  display: flex;
+  justify-content: space-between;
+}
+.small-img-col {
+  flex-basis: 45%;
+  cursor: pointer;
+}
+
+
+
+
+
+/*   about   */
+
+.container2{
+ 
+ 
+  text-align: center;
+
+}
+.imgabout{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.h1about{
+  font-size: 60px;
+ font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+ 
+}
+.pabout{
+  color: #313638;
+  font-size: 20px;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.btnabout{
+   display: inline-block;
+   background:#E8E9EB;
+   color: #313638;
+  padding: 8px 30px;
+  margin: 30px 0;
+  border-radius: 30px;
+  transition: background 0.5s;
+   border: 3px solid #313638;
+
+}
+
+.btnabout:hover {
+  background: #5899E2;
+  color: #E8E9EB;
+  transform: translateY(-5px);
+ 
+ 
+
+}
+
+/* my rent */
+
+.content-table{
+  border-collapse: collapse;
+  margin: 36px auto;
+  font-size: 20px;
+  min-width: 400px;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px black;
+  font-family:'Nunito', sans-serif ;
+
+
+}
+
+.content-table thead tr{
+  background-color: #5899E2;
+  color: #fff;
+  text-align: left;
+  font-weight: bold;
+}
+.content-table th,
+.content-table td{
+  padding: 12px 15px;
+
+}
+.content-table tbody tr{
+  border-bottom: 1px solid black ;
+}
+
+.content-button{
+  display: inline-block;
+ font-size: 10px;
+ border-radius: 30px;
+ padding: 4px 30px;
+ margin: 20px 0;
+ background:whitesmoke;
+ color:#313638;
+ border: 2px solid #313638;
+
+}
+
+.content-button:hover {
+  background: #5899E2;
+  color:white;
+
+}
