@@ -178,7 +178,7 @@ include ('config.php');
                                 <table class="table text-nowrap" border="1px">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">S.N</th>
+                                            <th class="border-top-0">ID</th>
                                             <th class="border-top-0">User Id</th>
                                             <th class="border-top-0">Cycle Id</th>
                                             <th class="border-top-0">From</th>
@@ -186,6 +186,8 @@ include ('config.php');
                                             <th class="border-top-0">Mobile no</th>
 
                                             <th class="border-top-0">Address</th>
+                                            <th class="border-top-0">Price</th>
+                                            <th class="border-top-0">Quantity</th>
                                             <th class="border-top-0">Operations</th>
 
                                             
@@ -203,6 +205,9 @@ include ('config.php');
                                                 $to_date=$row['to_date'];
                                                 $mobile_no=$row['mobile_no'];
                                                 $rent_address=$row['rent_address'];
+                                                $cycle_price=$row['price'];
+                                                $rent_quantity=$row['rent_quantity'];
+                                                $total = $row['total'];
 
                                                 echo'<tr> 
                                                     <th scope="row">'.$id.'</th>
@@ -212,6 +217,9 @@ include ('config.php');
                                                     <th scope="row">'.$to_date.'</th>
                                                     <th scope="row"> '.$mobile_no.'</th>
                                                     <th scope="row">'.$rent_address.' </th>
+                                                    <th scope="row">'.$cycle_price.' </th>
+                                                    <th scope="row">'.$rent_quantity.' </th>
+                                                    <th scope="row">'.$total.' </th>
                                                     
                                                     <td>
                                                     <button><a href="updaterent.php?updateid='.$id.'">Update</a></button>

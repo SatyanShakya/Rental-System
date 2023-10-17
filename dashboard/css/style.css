@@ -9829,7 +9829,7 @@ Down arrow
     .comment-footer .action-icons a:hover, .comment-footer .action-icons a.active {
       color: #2962FF; }
 
-form{
+.frm_addcycle{
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;

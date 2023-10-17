@@ -179,14 +179,15 @@ include ('config.php');
                                 <table class="table text-nowrap" border="2px">
                                     <thead>
                                         <tr>
-                                            <th class="border-top-0">S.N</th>
+                                            <th class="border-top-0">ID</th>
                                             <th class="border-top-0">Name</th>
                                             <th class="border-top-0">Price</th>
                                             <th class="border-top-0">Image</th>
+                                            <th class="border-top-0">Quantity</th>
                                             <th class="border-top-0">Operations</th>
 
                                             
-                                        </tr>
+                                        </tr> 
                                     </thead>
                                    <?php
                                         $sql="select * from cycle";
@@ -197,6 +198,7 @@ include ('config.php');
                                                 $name=$row['cycle_name'];
                                                 $price=$row['price'];
                                                 $image=$row['image'];
+                                                 $quantity=$row['quantity'];
                                                 echo'<tr>
                                                     <th scope="row">'.$id.'</th>
                                                     <th scope="row">'.$name.'</th>
@@ -204,9 +206,12 @@ include ('config.php');
                                   
                                                     <th scope="row"><img src='.$image.' width="100px" height="100px">  </th>
                                                     
+                                                    <th scope="row"> '.$quantity.'</th>
                                                     <td>
-                                                    
-                                                     <button><a href="deletecycle.php? deleteid='.$id.'">Delete</a></button>
+                                                    <button><a href="updatecycle.php?updatecycleid='.$id.'">Update</a></button>
+
+                                                     <button><a href="deletecycle.php?deleteid='.$id.'">Delete</a></button>
+                                              
                                                     </td>
 
                                                 </tr>';

@@ -54,10 +54,13 @@ include('config.php');
                 <th class="border-top-0">Mobile no</th>
 
                 <th class="border-top-0">Address</th>
+                <th class="border-top-0">Price</th>
+                <th class="border-top-0">Quantity</th>
+                <th class="border-top-0">Total</th>
                 <th class="border-top-0">Operations</th>
 
 
-            </tr>
+            </tr> 
         </thead>
         <?php
         //for cycle name
@@ -76,6 +79,9 @@ include('config.php');
                     <th scope="row"><?php echo $row['to_date']?></th>
                     <th scope="row"><?php echo $row['mobile_no']?></th>
                     <th scope="row"><?php echo $row['rent_address']?></th>
+                    <th scope="row"><?php echo $row['price']?></th>
+                    <th scope="row"><?php echo $row['rent_quantity']?></th>
+                    <th scope="row"><?php echo $row['total']?></th>
                     <?php
                     echo'
                     <td>
@@ -87,7 +93,7 @@ include('config.php');
 
                 <?php
             }
-        }else{
+        }else{ 
             echo "No cycles rented.";
         }
         ?>

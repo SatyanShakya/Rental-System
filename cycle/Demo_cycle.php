@@ -136,5 +136,6 @@
 
 
 
+cycle ko button ko change--
 
-
+<button class="btn_small"><a href="cycledetail_demo.php?cycleid=' . $id . ' " >Rent It </a></button>      

@@ -11,6 +11,9 @@ $from_date = $row['from_date'];
 $to_date = $row['to_date'];
 $mobile_no = $row['mobile_no'];
 $rent_address = $row['rent_address'];
+$cycle_price = $row['price'];
+$rent_quantity = $row['rent_quantity'];
+$total = $row['total'];
 
 if (isset($_POST['submit'])) {
     $user_id = $_POST['user_id'];
@@ -19,9 +22,12 @@ if (isset($_POST['submit'])) {
     $to_date = $_POST['to_date'];
     $mobile_no = $_POST['mobile_no'];
     $rent_address = $_POST['rent_address'];
-    
+    $cycle_price = $_POST['price'];
+    $rent_quantity = $_POST['rent_quantity'];
+    $total = $_POST['total'];
 
-    $sql = "UPDATE `rent` set user_id='$user_id',cycle_id='$cycle_id',from_date='$from_date',to_date='$to_date',mobile_no='$mobile_no',rent_address='$rent_address' where rent_id=$id";
+
+    $sql = "UPDATE `rent` set user_id='$user_id',cycle_id='$cycle_id',from_date='$from_date',to_date='$to_date',mobile_no='$mobile_no',rent_address='$rent_address',price='$cycle_price',rent_quantity='$rent_quantity',total='$total' where rent_id=$id";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {
@@ -55,12 +61,84 @@ if (isset($_POST['submit'])) {
 
     <!-- Custom CSS -->
     <link href="css/style.min.css" rel="stylesheet">
-    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
+    <script>
+        function calculatePrice() {
+            var fromdate = new Date(document.getElementById("fromDate").value);
+            var todate = new Date(document.getElementById("toDate").value);
+
+            var timeDiff = Math.abs(todate.getTime() - fromdate.getTime());
+            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+
+            // document.getElementById("result").innerHTML = "Number of days: " + diffDays;
+
+
+            var quantity = document.getElementById("quantity").value;
+            var price = document.getElementById("price").value;
+
+            var total = quantity * diffDays * price;
+
+            document.getElementById("total").value = total;
+        }
+
+        //put two function at once in form onsubmit
+
+        function combinedSubmit(event) {
+            var isValid = validateInput() && validateTwoDates() && validateDate();
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+            }
+
+            return isValid;
+        }
+
+        //addres only in letter
+        function validateInput() {
+            var input = document.getElementById("address").value;
+            var regex = /^[A-Za-z]+$/; // Regular expression to match alphabets only
+
+            if (input.match(regex)) {
+                // Input contains only alphabets
+                return true;
+            } else {
+                // Input contains non-alphabetic characters
+                alert("Please enter valid address");
+                return false;
+
+
+            }
+        }
+
+        //curent date only
+        function validateDate() {
+            var inputDate = new Date(document.getElementById("fromDate").value);
+            var currentDate = new Date();
+
+            if (inputDate < currentDate) {
+                alert("Invalid date. Please select a date that is not expired.");
+                return false;
+            }
+
+            return true;
+        }
+
+        //from date should be greater
+
+        function validateTwoDates() {
+            var fromDate = new Date(document.getElementById("fromDate").value);
+            var toDate = new Date(document.getElementById("toDate").value);
+
+            if (fromDate > toDate) {
+                alert("Invalid date range. Please select a valid range of dates.");
+                return false;
+            }
+
+            return true;
+        }
+
+
+    </script>
+
 </head>
 
 <body>
@@ -142,7 +220,7 @@ if (isset($_POST['submit'])) {
 
 
                         <li class="sidebar-item">
-                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="viewcycle.php"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="viewcycle.php"
                                 aria-expanded="false">
                                 <!-- <i class="fa fa-table" aria-hidden="true"></i> -->
                                 <span class="hide-menu">&#10070 View Cycle</span>
@@ -187,33 +265,53 @@ if (isset($_POST['submit'])) {
 
             <div class="container-fluid">
 
-                <div class="row"> 
+                <div class="row">
                     <div class="col-sm-12">
                         <div class="white-box">
                             <h3 class="box-title">Update rent</h3>
 
-                            <form method="post" class="formdesign">
+                          
 
-                            User Id: 
-                            <input type="number" name="user_id" readonly value=<?php echo $user_id;  ?>> <br>
+                            <form method="post" class="formdesign" onsubmit="return combinedSubmit(event)">
 
-                            Cycle Id: 
-                            <input type="number" name="cycle_id" readonly  value=<?php echo $cycle_id;  ?>><br>
+                                User Id:
+                                <input type="number" name="user_id" readonly value=<?php echo $user_id; ?>> <br>
 
-                            From:
-                            <input type="date" name="from_date" value=<?php echo $from_date;  ?>><br>
+                                Cycle Id:
+                                <input type="number" name="cycle_id" readonly value=<?php echo $cycle_id; ?>><br>
 
-                            To:
-                            <input type="date" name="to_date" value=<?php echo $to_date;  ?>><br>
+                                From:
+                                <input type="date" id="fromDate" name="from_date" value=<?php echo $from_date; ?>
+                                    required><br>
 
-                            Mobile:
-                            <input type="number" placeholder="mobile no" name="mobile_no" value=<?php echo $mobile_no;  ?>><br>
+                                To:
+                                <input type="date" id="toDate" name="to_date" value=<?php echo $to_date; ?>
+                                    required><br>
 
-                            Address:
-                        <input type="address" placeholder="Address" name="rent_address" value=<?php echo $rent_address;  ?>> <br>
+                                Mobile:
+                                <input type="number" placeholder="mobile no" name="mobile_no" value=<?php echo $mobile_no; ?> required><br>
 
-                           
-                            <input type="submit" value="Update" name="submit">
+                                Address:
+                                <input type="address" placeholder="Address" id="address" name="rent_address" value=<?php echo $rent_address; ?> required> <br>
+
+
+
+                                Quantity:
+                                <input type="number" id="quantity" placeholder="Quantity" name="rent_quantity"
+                                    value=<?php echo $rent_quantity; ?> onchange="calculatePrice()" min="1" max="3" required> <br>
+
+                                Price:
+                                <input type="number" id="price" value=<?php echo $cycle_price; ?> readonly name="price"
+                                    required>
+                                <br>
+
+
+                                Total amount:
+                                <input type="number" id="total" name="total" readonly>
+                                <br>
+
+
+                                <input type="submit" value="Update" name="submit">
 
                             </form>
 
